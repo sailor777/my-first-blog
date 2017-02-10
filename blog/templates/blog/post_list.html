@@ -6,17 +6,13 @@
       <div>
           <h1><a href="">Django Sailor Blog</a></h1>
       </div>
-
-      <div>
-          <a href="https://checkio.org/">CHeckIO.org</a>
-          <ul><li><p>It works!</p></ul></li><ul><li><p>It works 2!</p></ul></li>
-      </div>
-
-      <div>
-          <p> published 1: </p>
-          <h2><a href="">My first post</a></h2>
-          <p>Good for You!</p>
-      </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr}}</p>
+    </div>
+{% endfor %}
 
     <body>
 </html>
